@@ -3,18 +3,18 @@ from itertools import permutations
 from collections import deque
 
 # Graph Input
-graph = {
-    "Depot": {"Customer 1": 5, "Customer 3": 20},
-    "Customer 1": {"Depot": 5, "Customer 2": 10},
-    "Customer 2": {"Customer 1": 10, "Customer 3": 15},
-    "Customer 3": {"Depot": 20, "Customer 2": 15}
-}
+# graph = {
+#     "Depot": {"Customer 1": 5, "Customer 3": 20},
+#     "Customer 1": {"Depot": 5, "Customer 2": 10},
+#     "Customer 2": {"Customer 1": 10, "Customer 3": 15},
+#     "Customer 3": {"Depot": 20, "Customer 2": 15}
+# }
 
-blocked_roads = {("Customer 1", "Customer 2")}
-traffic_data = {
-    ("Depot", "Customer 1"): "low",
-    ("Depot", "Customer 3"): "high_traffic"
-}
+# blocked_roads = {("Customer 1", "Customer 2")}
+# traffic_data = {
+#     ("Depot", "Customer 1"): "low",
+#     ("Depot", "Customer 3"): "high_traffic"
+# }
 
 # Helper Functions
 def build_graph_excluding_blocked(graph, blocked_roads):
@@ -134,29 +134,29 @@ def dfs(graph, start, visited=None, traversal=None):
     return traversal
 
 # Main Execution
-if __name__ == "__main__":
-    # Build graph excluding blocked roads
-    updated_graph = build_graph_excluding_blocked(graph, blocked_roads)
+# if __name__ == "__main__":
+#     # Build graph excluding blocked roads
+#     updated_graph = build_graph_excluding_blocked(graph, blocked_roads)
 
-    # TSP
-    tsp_route, tsp_distance = tsp_brute_force(updated_graph, "Depot")
-    print("TSP Route:", tsp_route)
-    print("TSP Distance:", tsp_distance)
+#     # TSP
+#     tsp_route, tsp_distance = tsp_brute_force(updated_graph, "Depot")
+#     print("TSP Route:", tsp_route)
+#     print("TSP Distance:", tsp_distance)
 
-    # Dijkstra
-    shortest_path, shortest_distance = dijkstra(updated_graph, "Depot", "Customer 3")
-    print("Shortest Path (Depot -> Customer 3):", shortest_path)
-    print("Shortest Distance:", shortest_distance)
+#     # Dijkstra
+#     shortest_path, shortest_distance = dijkstra(updated_graph, "Depot", "Customer 3")
+#     print("Shortest Path (Depot -> Customer 3):", shortest_path)
+#     print("Shortest Distance:", shortest_distance)
 
-    # MST
-    mst_edges, mst_cost = prim_mst(updated_graph)
-    print("MST Edges:", mst_edges)
-    print("Total MST Cost:", mst_cost)
+#     # MST
+#     mst_edges, mst_cost = prim_mst(updated_graph)
+#     print("MST Edges:", mst_edges)
+#     print("Total MST Cost:", mst_cost)
 
-    # BFS
-    bfs_traversal = bfs(updated_graph, "Depot")
-    print("BFS Traversal:", bfs_traversal)
+#     # BFS
+#     bfs_traversal = bfs(updated_graph, "Depot")
+#     print("BFS Traversal:", bfs_traversal)
 
-    # DFS
-    dfs_traversal = dfs(updated_graph, "Depot")
-    print("DFS Traversal:", dfs_traversal)
+#     # DFS
+#     dfs_traversal = dfs(updated_graph, "Depot")
+#     print("DFS Traversal:", dfs_traversal)

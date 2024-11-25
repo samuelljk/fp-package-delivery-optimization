@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Graph Theory Web App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Graph Theory Web Application</h1>
+    <form id="graph-form">
+      <label for="graph">Enter Graph (JSON format):</label>
+      <textarea id="graph" rows="10" cols="50"></textarea>
+      <label for="algorithm">Select Algorithm:</label>
+      <select id="algorithm">
+        <option value="tsp">Traveling Salesman Problem</option>
+        <option value="shortest_path">Shortest Path</option>
+        <option value="mst">Minimum Spanning Tree</option>
+        <option value="bfs">BFS Traversal</option>
+        <option value="dfs">DFS Traversal</option>
+      </select>
+      <label for="start">Start Node:</label>
+      <input type="text" id="start" />
+      <label for="end">End Node (if applicable):</label>
+      <input type="text" id="end" />
+      <button type="submit">Submit</button>
+    </form>
+    <pre id="output"></pre>
+    <script src="script.js"></script>
+  </body>
+</html>
